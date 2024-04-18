@@ -10,10 +10,10 @@ import { useQuery } from '@tanstack/react-query'
 import { QueryResult } from '@upstash/vector'
 import axios from "axios";
 import type { bikeRoute } from "@/db";
-import Product from '@/components/Products/Product'
+import Product from '@/components/products/Product'
 import {ProductState} from "@/lib/validators/product-validator"
-import ProductSkeleton from '@/components/Products/ProductSkeleton'
-import EmptyState from '@/components/Products/EmptyState'
+import ProductSkeleton from '@/components/products/ProductSkeleton'
+import EmptyState from '@/components/products/EmptyState'
 import debounce from "lodash.debounce"
 
 import {
