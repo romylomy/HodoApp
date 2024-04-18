@@ -1,0 +1,14 @@
+{
+    "headers": [
+      {
+        "source": "/api/(.*)",
+        "headers": [
+          { "key": "Access-Control-Allow-Credentials", "value": "true" },
+          { "key": "Access-Control-Allow-Origin", "value": "https://hodo-app.vercel.app" },
+          { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,POST,PUT" },
+          { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, Authorization, Content-Type" }
+        ]
+      }
+    ]
+  }
+  
