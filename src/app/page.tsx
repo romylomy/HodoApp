@@ -44,7 +44,7 @@ export default function Home() {
     queryKey:['products'],
     queryFn: async () => {
       const {data} = await axios.post<QueryResult<bikeRoute>[]>(
-        'http://localhost:3000/api/products', 
+        'https://hodo-app-romylomys-projects.vercel.app/api/products', 
         {
           filter:{
             sort: filter.sort,
