@@ -1,5 +1,7 @@
 import {Index} from "@upstash/vector"; 
+import * as dotenv from 'dotenv'
 
+dotenv.config()
 export type bikeRoute = {
     id: string 
     imageId:string

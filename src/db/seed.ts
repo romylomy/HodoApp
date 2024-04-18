@@ -1,9 +1,8 @@
 import { type bikeRoute, db } from '.'
+import * as dotenv from 'dotenv'
 
 
 dotenv.config()
-
-
 
 const seed = async () => {
   const products: bikeRoute[] = [
@@ -38,14 +37,14 @@ const seed = async () => {
         trailtype: 'single'
     },
     {
-        id: 'waterton-easy-1',
+        id: 'waterton-hard-1',
         imageId: '/watertondifficult1.png',
-        name: 'Banff Legacy Trail',
+        name: 'Akamina Pass Trail',
         nationalpark: 'jasper',
-        description: 'Get to know this 20.3-km point-to-point trail near Canmore, Alberta. Generally considered a moderately challenging route, it takes an average of 4 h 46 min to complete. This is a very popular area for mountain biking, road biking, and running, so you will likely encounter other people while exploring. The best times to visit this trail are April through November. Dogs are welcome, but must be on a leash.',
+        description: 'This short, steep trail climbs from the Akamina Parkway to the Alberta-British Columbia boundary then continues into Akamina-Kishinena Provincial Park in B.C.',
         distance: 20.3,
-        difficulty: 'moderate',
-        trailtype: 'single'
+        difficulty: 'hard',
+        trailtype: 'downhill'
     }
 
   ]
