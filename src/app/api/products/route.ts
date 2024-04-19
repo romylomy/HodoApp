@@ -36,12 +36,14 @@ class Filter {
 export const POST = async (req: NextRequest) => {
     try {
         const body = await req.json();
-        const {sort, difficulty, nationalpark, distance} = ProductFilterValidator.parse(body.filter);
+        const {sort, difficulty, nationalpark, distance, trailtype} = ProductFilterValidator.parse(body.filter);
 
         const filter = new Filter();
         difficulty.forEach(difficulty => filter.add("difficulty", "=", difficulty));
         nationalpark.forEach(nationalpark => filter.add("nationalpark", "=", nationalpark));
         filter.addRaw("distance", `distance >= ${distance[0]} AND distance <= ${distance[1]}`);
+        trailtype.forEach(trailtype => filter.add("trailtype", "=", trailtype));
+
 
         const products = await db.query({
             topK: 4, 
@@ -63,6 +65,7 @@ export const POST = async (req: NextRequest) => {
         return new Response(JSON.stringify(products));
     } catch (e) {
         console.error(e);
+        console.log(req.body);
         return new Response(JSON.stringify({error: "Server error"}), {status: 500});
     }
 }
